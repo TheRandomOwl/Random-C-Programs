@@ -2,7 +2,7 @@
  
 long double nilakantha_pi();
 
-int main() {
+int main(void) {
 	printf("Pi is: %.15Lf\n", nilakantha_pi());
 	return 0;
 }
