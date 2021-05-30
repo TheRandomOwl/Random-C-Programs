@@ -2,8 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-void check_win();
-int computer_move();
+void check_win(int, int);
 char moves[3][9] = {
 	"rock",
 	"paper",
