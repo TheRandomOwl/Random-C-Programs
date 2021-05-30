@@ -2,11 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-void check_win(void);
-int computer_move(void);
-int player;
-int computer;
-time_t t;
+void check_win();
+int computer_move();
 char moves[3][9] = {
 	"rock",
 	"paper",
@@ -14,7 +11,9 @@ char moves[3][9] = {
 };
 	
 int main(void) {
+	time_t t;
 	srand((unsigned) time(&t));
+	int player;
 	printf("To play, select Rock, Paper, or Scissors (1, 2, or 3).\n");
 	scanf("%i", &player);
 	switch(player) {
@@ -31,7 +30,7 @@ int main(void) {
 			printf("Not a vaild option, please try again.\n");
 			return 1;
 	}
-	computer = computer_move() + 1;
+	int computer = (rand() % 3) + 1;
 	switch(computer) {
 		case 1:
 			printf("Computer move is: %s\n", moves[0]);
@@ -46,29 +45,24 @@ int main(void) {
 			printf("Somthing went wrong.\n");
 			return 1;
 	}
-	check_win();
+	check_win(computer, player);
 	return 0;
 } 
 
-int computer_move(void) {
-	int computer_numb = rand() % 3;
-	return computer_numb;
-}
-
-void check_win(void) {
-	if (computer == player) {
+void check_win(int c, int p) {
+	if (c == p) {
 		printf("Tie\n");
-	} else if (computer + player == 3 && player > computer) {
+	} else if (c + p == 3 && p > c) {
 		printf("Player wins!\n");
-	} else if (computer + player == 3 && player < computer) {
+	} else if (c + p == 3 && p < c) {
 		printf("Computer wins!\n");
-	} else if (computer + player == 4 && player > computer) {
+	} else if (c + p == 4 && p > c) {
 		printf("Computer wins!\n");
-	} else if (computer + player == 4 && player < computer) {
+	} else if (c + p == 4 && p < c) {
 		printf("Player wins!\n");
-	} else if (computer + player == 5 && player > computer) {
+	} else if (c + p == 5 && p > c) {
 		printf("Player wins!\n");
-	} else if (computer + player == 5 && player < computer) {
+	} else if (c + p == 5 && p < c) {
 		printf("Computer wins!\n");
 	}
 
