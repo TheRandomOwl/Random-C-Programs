@@ -1,4 +1,4 @@
-/* This program finds and lists the prime numbers between 2 and 1,000,000. */
+/* This program finds and lists the prime numbers between 1 and 1,000,000. */
 #include <stdio.h>
 
 int main(void) {
