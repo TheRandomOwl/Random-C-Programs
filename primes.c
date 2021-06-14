@@ -13,8 +13,7 @@ int main(void) {
 				break;
 		/* Since a number can't be divisible by a number greater than half of
 		 * itself, time will be saved by using break when the primes variable is
-		 * greater than half of i.
-		 */
+		 * greater than half of i. */
 			} else if (primes[h] > i / 2) {
 				break;
 			}
